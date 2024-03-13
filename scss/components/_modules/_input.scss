@@ -1,0 +1,16 @@
+input {
+    margin-top: 20px;
+    padding: 12px 10px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    box-shadow: inset 0px 0px 10px 0px $darkText;
+    color: $darkText;
+    width: 100%;
+    max-width: 250px;
+
+    &::placeholder {
+        color: $darkText;
+    }
+}

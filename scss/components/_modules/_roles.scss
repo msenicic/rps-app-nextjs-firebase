@@ -1,0 +1,146 @@
+.roles {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    aspect-ratio: 1/1;
+    background-position: center;
+    background-size: 65%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-content: space-around;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media only screen and (min-width: 768px) {
+        margin: 20px auto 0 auto;
+    }
+
+    .rock {
+        margin: 0 auto;
+    } 
+}
+
+.circle {
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 4%;
+    box-shadow: inset 0px -5px 0px 0px rgba(0,0,0,0.2);
+    flex: 0 0 41.67%;
+    max-width: 250px;
+    aspect-ratio: 1/1;
+    position: relative;
+
+    &.paper {
+        background: linear-gradient(to top, $paperOne, $paperTwo);
+
+        &.me img {
+            transform: rotateY(180deg);
+        }  
+    }
+
+    &.scissors {
+        background: linear-gradient(to top, $scissorsOne, $scissorsTwo);
+
+        &.enemy img {
+            transform: rotateY(180deg);
+        }
+    }
+
+    &.rock {
+        background: linear-gradient(to top, $rockOne, $rockTwo);
+
+        &.me img {
+            transform: rotateY(180deg);
+        }
+    } 
+
+    &.empty {
+        background-color: transparent;
+        box-shadow: none;
+        animation: animate 1s ease-out;
+
+        &.animation {
+            animation: empty 0.5s ease-out;
+        }
+    
+        .inner {
+            background-color: rgba(0,0,0,0.2);
+            box-shadow: none;
+        }
+    }
+
+    &.winner {
+        animation: pulse 2s infinite;
+        position: relative;
+
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            background-color: #ffffff33;
+            animation: pulse 2s infinite;
+            z-index: -1;
+        }
+
+        &::after {
+            animation: pulse 2s 0.5s infinite;
+        }
+    }
+
+    &.animation {
+        animation: animate 1s ease-out;
+    }
+
+    .inner {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: $backgorundNeutral;
+        box-shadow: inset 0px 5px 0px 0px rgba(0,0,0,0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        &:hover {
+            box-shadow: inset 0px 0px 10px 5px rgba(0,0,0,0.2);
+        }
+
+        img {
+            width: 45%;
+        }
+    }
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes empty {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(2.5);
+    }
+}

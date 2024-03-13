@@ -1,0 +1,57 @@
+.links {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    flex: 1;
+
+    @media only screen and (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .link {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        color: $textNeutral;
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+
+        @media only screen and (min-width: 768px) {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        p {
+            font-size: 38px;
+            font-weight: $fontWeightBold;
+            margin-bottom: 10px;
+        }
+
+        .button {
+            display: flex;
+            flex: 0 0 100%;
+            max-width: 200px;
+            align-items: center;
+            justify-content: center;
+            background-color: $backgorundNeutral;
+            padding: 15px 20px;
+            color: $darkText;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: $fontWeightRegular;
+            transition: 0.5s;
+            margin: 0 auto;
+    
+            &:hover {
+                box-shadow: inset 0px 0px 10px 5px rgba(0,0,0,0.2);
+            }
+        }
+    }    
+}

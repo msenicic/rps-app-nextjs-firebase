@@ -1,0 +1,30 @@
+footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (min-width: 768px) {
+        justify-content: flex-end;
+    }
+
+    .button {
+        padding: 10px;
+        border: 2px solid $headerOutline;
+        border-radius: 10px;
+        background-color: transparent;
+        color: $textNeutral;
+        width: 125px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-align: center;
+        cursor: pointer;
+        transition: 0.5s;
+
+        &:hover {
+            border: 2px solid $backgorundNeutral;
+            background-color: $backgorundNeutral;
+            color: $backgroundTwo;
+        }
+    }
+}
